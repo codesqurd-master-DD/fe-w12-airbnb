@@ -1,0 +1,307 @@
+html,
+body {
+  height: 100%;
+  word-break: keep-all;
+}
+
+.contents_wrapper {
+  margin: 0 9.5rem;
+}
+
+#notice {
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.3rem 0;
+}
+#notice > a {
+  color: white;
+  font-size: 0.8rem;
+}
+header {
+  width: 100%;
+  height: 4rem;
+  position: fixed;
+  color: white;
+  font-size: 16px;
+  z-index: 2;
+}
+header .contents_wrapper {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+header .contents_wrapper > div {
+  width: 30%;
+  height: 2rem;
+}
+header .search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+header .search-type label {
+  margin-right: 1rem;
+}
+header .search-type > *:hover {
+  color: rgb(221, 219, 219);
+}
+
+header .search-type input[type="radio"] {
+  position: absolute;
+  width: 0;
+}
+header .floatBox {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+header .searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  width: 55rem;
+  height: 4rem;
+  border-radius: 2rem;
+}
+header .searchBox-location {
+  flex: 1.5;
+}
+header .searchBox-date {
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+header .searchBox-person {
+  flex: 1.2;
+  display: flex;
+  justify-content: flex-end;
+}
+header .verticalBar {
+  height: 2rem;
+  border-left: 1px solid rgb(216, 216, 216);
+}
+
+header .searchBox-section {
+  width: 100%;
+  color: black;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+
+  height: 4rem;
+  border-radius: 2rem;
+  box-sizing: border-box;
+}
+
+header .searchBox-section:hover {
+  background: rgb(240, 240, 240);
+}
+
+header .searchBox-section ::placeholder {
+  font-size: 0.8rem;
+}
+header .searchBox-section div:first-child {
+  height: 1rem;
+  font-weight: bold;
+}
+header .searchBox-section *:last-child {
+  margin-top: 0.2rem;
+  height: 1rem;
+}
+header .searchBox-button {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .searchBox-button button {
+  width: 3rem;
+  height: 3rem;
+  background: #ff385c;
+  border: none;
+  border-radius: 1.5rem;
+}
+header .searchBox-button button:hover {
+  background: rgb(219, 28, 76);
+}
+header .menuBox {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header .menuBox li + li {
+  margin-left: 1.5rem;
+}
+header .menu-mypage {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 0.4rem 0.4rem 0.4rem 0.8rem;
+
+  border-radius: 2rem;
+}
+header .menu-mypage object + object {
+  margin-left: 1rem;
+}
+.container > section {
+  width: 100%;
+}
+.section-visual {
+  background-size: cover;
+  background-image: url(../img/banner.webp);
+  background-repeat: no-repeat;
+  background-position: left 55%;
+  height: 800px;
+  box-sizing: border-box;
+  position: relative;
+}
+.section-visual::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+}
+.section-visual .copy-box {
+  width: 30rem;
+  position: absolute;
+  top: 45%;
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+.section-visual .copy-box span.copy {
+  font-size: 3.3rem;
+  font-weight: bold;
+  color: white;
+  line-height: 3.7rem;
+}
+.section-visual .copy-box span.btn {
+  background: white;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: bold;
+
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.section-visual .copy-box span.btn:hover {
+  background-color: rgb(230, 231, 236);
+}
+
+.locations {
+  margin-top: 5rem;
+}
+.locations .contents_wrapper ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.location {
+  width: 25%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+}
+.location > div:first-child {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.location img {
+  width: 100%;
+}
+
+.location > div:last-child {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.location > div:last-child > div:first-child {
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.article-box {
+  margin-top: 4rem;
+  padding: 2.5rem 0;
+}
+.article-box .contents_wrapper h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.article-box .contents_wrapper > div {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.article-item {
+  flex: 1;
+}
+.article-item + .article-item {
+  margin-left: 1rem;
+}
+.article-item img {
+  border-radius: 1rem;
+  width: 100%;
+}
+.article-item div {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.article-dark {
+  background: black;
+  color: white;
+}
+.article-dark p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+footer {
+  margin-top: 5rem;
+  background: rgb(230, 231, 236);
+}
+
+footer .contents_wrapper > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 0;
+}
+
+.footer-up ul li {
+  margin-top: 1rem;
+}
+
+.footer-down {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+
+  border-top: 1px solid rgb(167, 167, 167);
+  padding: 2rem 0;
+}
+
+.footer-down ul {
+  display: flex;
+}
