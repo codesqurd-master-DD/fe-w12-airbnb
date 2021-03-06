@@ -1,0 +1,519 @@
+html,
+body {
+  height: 100%;
+  word-break: keep-all;
+}
+
+.contents_wrapper {
+  margin: 0 9.5rem;
+}
+
+#notice {
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.3rem 0;
+}
+#notice > a {
+  color: white;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+header {
+  width: 100%;
+  height: 4rem;
+  position: fixed;
+  color: white;
+  font-size: 16px;
+  z-index: 2;
+}
+header .contents_wrapper {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+header .contents_wrapper > div {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+object {
+  pointer-events: none;
+}
+header .search {
+  justify-content: center;
+  position: relative;
+}
+header .search-type {
+  display: flex;
+}
+header .search-type > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+header .search-type > div + div {
+  margin-left: 1rem;
+}
+header .search-type > div::after {
+  position: absolute;
+  top: 1.6rem;
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  transition: width 0.3s ease;
+  background: white;
+}
+
+header .search-type > div:hover {
+  color: rgb(221, 219, 219);
+  cursor: pointer;
+}
+.search-type > div:hover::after {
+  width: 0.2rem;
+}
+header .search-type > .selected::after {
+  width: 50%;
+}
+header .search-type label {
+  cursor: pointer;
+}
+header .search-type a:hover {
+  color: rgb(221, 219, 219);
+}
+
+header .search-type input[type="radio"] {
+  position: absolute;
+  width: 0;
+}
+header .search-floatBox {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+header .searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  width: 55rem;
+  height: 4rem;
+  border-radius: 2rem;
+}
+header .searchBox-location {
+  flex: 1.5;
+}
+header .searchBox-date {
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+header .searchBox-person {
+  flex: 1.2;
+  display: flex;
+  justify-content: flex-end;
+}
+header .verticalBar {
+  height: 2rem;
+  border-left: 1px solid rgb(216, 216, 216);
+}
+
+header .searchBoxItem {
+  width: 100%;
+  color: black;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+
+  height: 4rem;
+  border-radius: 2rem;
+  box-sizing: border-box;
+}
+
+header .searchBoxItem:hover {
+  background: rgb(240, 240, 240);
+}
+
+header .searchBoxItem ::placeholder {
+  font-size: 0.8rem;
+}
+header .searchBoxItem div:first-child {
+  height: 1rem;
+  font-weight: bold;
+}
+header .searchBoxItem *:last-child {
+  margin-top: 0.2rem;
+  height: 1rem;
+}
+header .searchBox-button {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .searchBox-button button {
+  width: 3rem;
+  height: 3rem;
+  background: #ff385c;
+  border: none;
+  border-radius: 1.5rem;
+}
+header .searchBox-button button:hover {
+  background: rgb(219, 28, 76);
+}
+header .searchItem-floatBox {
+  position: absolute;
+  display: flex;
+  top: 5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+header .searchItem-floatBox.item-location {
+  justify-content: flex-start;
+}
+header .searchItem-location {
+  width: 60%;
+  background: white;
+  border-radius: 2rem;
+}
+header .location-list {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+header .location-list > li {
+  color: black;
+  padding: 0.2rem 2rem;
+  display: flex;
+  align-items: center;
+}
+header .location-list > li > img {
+  width: 3rem;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+}
+header .searchItem-floatBox.item-calendar {
+  background: white;
+  flex-direction: column;
+  border-radius: 2rem;
+  color: black;
+  padding: 3rem;
+}
+
+header .calendar-container {
+  position: relative;
+}
+header .calendar-container > .calendar-fixed-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: none;
+  z-index: 2;
+}
+header .calendar-fixed-box > .calendar-day-control {
+  display: flex;
+  justify-content: space-between;
+}
+header .calendar-fixed-box .calendar-day-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+header .calendar-fixed-box .calendar-day {
+  display: flex;
+  width: 47%;
+}
+header .calendar-day li {
+  width: 14.28%;
+  text-align: center;
+}
+
+header .calendar-container > .calendar-list {
+  overflow: hidden;
+}
+header .calendar-list > .translate-box {
+  padding: 0 1rem;
+  display: flex;
+  transform: translate(-25.1rem);
+  transition: transform 0.5s ease-out;
+}
+header .translate-box > div + div {
+  margin-left: 3rem;
+}
+
+header .calendar-date {
+  width: 22.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .calendar-box ul {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+header .calendar-box ul > li {
+  font-weight: bold;
+  width: 14.28%;
+}
+header .calendar-box > ul > li > div {
+  width: 100%;
+  height: 0;
+  padding: 50% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+header .calendar-box > ul > li > div.clicked {
+  background: black;
+  color: white;
+}
+
+header .calendar-box ul > li.notPassed > div:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0 1px black;
+}
+header .calendar-box ul > li.passed {
+  font-weight: 300;
+  color: rgb(136, 136, 136);
+}
+header .calendar-option > ul {
+  display: flex;
+}
+header .searchItem-floatBox.item-guest {
+  justify-content: flex-end;
+}
+header .menu {
+  height: 100%;
+  justify-content: flex-end;
+}
+header .menu nav {
+  height: 100%;
+}
+header .menuBox {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+}
+header .menuBox > li:nth-child(-n + 2) {
+  display: inline-block;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border-radius: 5rem;
+}
+header .menuBox > li:nth-child(-n + 2):hover {
+  background: rgba(231, 231, 231, 0.3);
+}
+header .menu-mypage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 0.4rem 0.4rem 0.4rem 0.8rem;
+  margin-left: 1rem;
+  border-radius: 2rem;
+}
+header .menu-mypage object + object {
+  margin-left: 1rem;
+}
+header .menu-floatbox {
+  background: white;
+  color: black;
+  position: absolute;
+  right: 0;
+  top: 3.5rem;
+  width: 120%;
+  border-radius: 0.7rem;
+  max-height: 0rem;
+  overflow: hidden;
+  transition: max-height 2s ease-out;
+}
+header .menu-floatbox.show {
+  max-height: 90rem;
+}
+header .menu-floatbox ul {
+  padding: 0.7rem 0;
+}
+header .menu-floatbox ul + ul {
+  border-top: 1px solid rgb(216, 216, 216);
+}
+header .menu-floatbox ul li {
+  padding: 1.2rem 1rem;
+  cursor: pointer;
+}
+header .menu-floatbox ul li:hover {
+  background-color: rgb(240, 240, 240);
+}
+.container > section {
+  width: 100%;
+}
+.section-visual {
+  background-size: cover;
+  background-image: url(../img/banner.webp);
+  background-repeat: no-repeat;
+  background-position: left 55%;
+  height: 800px;
+  box-sizing: border-box;
+  position: relative;
+}
+.section-visual::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+}
+.section-visual .copy-box {
+  width: 30rem;
+  position: absolute;
+  top: 45%;
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+.section-visual .copy-box span.copy {
+  font-size: 3.3rem;
+  font-weight: bold;
+  color: white;
+  line-height: 3.7rem;
+}
+.section-visual .copy-box span.btn {
+  background: white;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: bold;
+
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.section-visual .copy-box span.btn:hover {
+  background-color: rgb(230, 231, 236);
+}
+
+.locations {
+  margin-top: 5rem;
+}
+.locations .contents_wrapper ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.location {
+  width: 25%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+}
+.location > div:first-child {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.location img {
+  width: 100%;
+}
+
+.location > div:last-child {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.location > div:last-child > div:first-child {
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.article-box {
+  margin-top: 4rem;
+  padding: 2.5rem 0;
+}
+.article-box .contents_wrapper h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.article-box .contents_wrapper > div {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.article-item {
+  flex: 1;
+}
+.article-item + .article-item {
+  margin-left: 1rem;
+}
+.article-item img {
+  border-radius: 1rem;
+  width: 100%;
+}
+.article-item div {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.article-dark {
+  background: black;
+  color: white;
+}
+.article-dark p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+footer {
+  margin-top: 5rem;
+  color: #484848;
+  background: rgb(245, 245, 245);
+  border-top: 0.5px solid rgb(223, 223, 223);
+}
+
+footer .contents_wrapper > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 0;
+}
+
+.footer-up ul li {
+  margin-top: 1rem;
+}
+
+.footer-down {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+
+  border-top: 1px solid rgb(167, 167, 167);
+  padding: 2rem 0;
+}
+
+.footer-down ul {
+  display: flex;
+}
